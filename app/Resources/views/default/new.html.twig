@@ -1,0 +1,20 @@
+{# app/Resources/views/default/new.html.twig #}
+
+<h1>Cash Machine</h1>
+{{ form_start(form) }}
+{% if error %}
+    <ul>
+            <li>{{ error|e }}</li>
+    </ul>
+{% endif %}
+
+{% if notas %}
+    <ul>
+            <li>Notas: $100 x {{ notas.0|e }}, $50 x {{ notas.1|e }}, $20 x {{ notas.2|e }}, $10 x {{ notas.3|e }}</li>
+    </ul>
+{% endif %}
+
+{{ form_widget(form) }}
+<br><button type="submit">Retirar</button>
+{{ form_end(form) }}
+
